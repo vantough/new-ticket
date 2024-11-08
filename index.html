@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ticket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container my-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <img src="Logo.png" alt="Maruti Logo" class="logo">
+        <div class="profile-section d-flex align-items-center">
+            <img style="margin-right: 10px;" src="./profile.png" alt="Profile" class="profile-icon">
+            <span class="profile-name me-2">Maruti ABC <span class="badge bg-primary">124</span></span>
+            <!-- Dark Mode Toggle Icon -->
+            <button id="darkModeToggle" class="toggle-icon ms-3">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                    <path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <div>    
+        <h4 class="text-center">Welcome Back</h4>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-primary mx-2">Dashboard</button>
+            <button class="btn btn-outline-primary mx-2">Ticket Management</button>
+            <button class="btn btn-primary mx-2">New Ticket</button>
+        </div>
+    </div>
+
+    <!-- Ticket Form -->
+    <form style="margin-top: 20px" id="ticketForm" class="card p-4">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="ticketNumber" class="form-label">Ticket Number</label>
+                <input type="text" id="ticketNumber" class="form-control" readonly>
+            </div>
+            <div class="col-md-4">
+                <label for="status" class="form-label">Status</label>
+                <select id="status" class="form-select" required>
+                    <option value="Draft">Draft</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Processed">Processed</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="referenceTicket" class="form-label">Reference Ticket</label>
+                <select id="referenceTicket" class="form-select" required>
+                    <option value="Draft">Draft</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Escalated">Escalated</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="type" class="form-label">Type</label>
+                <input type="text" id="type" class="form-control" placeholder="New/New With Reference/Revision" required>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" id="model" class="form-control" placeholder="Enter model" autocomplete="off" required>
+                <ul id="modelDropdown" class="dropdown-menu w-100"></ul>
+            </div>            
+            <div class="col-md-4">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="bodyDescription" class="form-label">Body Description</label>
+                <textarea id="bodyDescription" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="attachment" class="form-label">Attachment</label>
+                <input type="file" id="attachment" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="deadline" class="form-label">Deadline</label>
+                <input type="date" id="deadline" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="priority" class="form-label">Priority</label>
+                <select id="priority" class="form-select" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="initiator" class="form-label">Initiator</label>
+                <input type="text" id="initiator" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="internalExternal" class="form-label">Internal/External</label>
+                <select id="internalExternal" class="form-select" required>
+                    <option value="Internal">Internal</option>
+                    <option value="External">External</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="folderLink" class="form-label">Folder Link</label>
+                <input type="url" id="folderLink" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="additionalInfo" class="form-label">Additional Info (Description)</label>
+                <input type="text" id="additionalInfo" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center mt-4">
+            <button type="button" id="saveButton" class="btn btn-primary mx-2">Save</button>
+            <button type="submit" class="btn btn-success mx-2">Next</button>
+            <button type="reset" class="btn btn-danger mx-2">Cancel</button>
+        </div>        
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="darkmode.js"></script>
+</body>
+</html>

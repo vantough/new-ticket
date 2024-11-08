@@ -1,0 +1,231 @@
+/* Default light mode styles */
+body {
+    background-color: #f5f8fd;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.container h4 {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Updated Button Colors */
+.btn-primary {
+    background-color: #2c3e8b;
+    border-color: #2c3e8b;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+form .btn-primary, .btn-success, .btn-danger {
+    border-radius: 50px;
+    padding: 10px 50px;
+}
+
+
+.btn-primary:hover {
+    background-color: #1b2a6d;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-weight: bold;
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+/* Form control styles */
+.form-control,
+.form-select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ced4da;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+    color: #6c757d; /* Light mode placeholder color */
+    transition: color 0.5s ease;
+}
+
+/* Dark mode toggle icon */
+.toggle-icon {
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.5s ease;
+}
+
+.toggle-icon svg {
+    stroke: #333; /* Default icon color for light mode */
+    transition: stroke 0.5s ease;
+}
+
+/* Responsive adjustments for mobile users */
+@media (max-width: 576px) {
+    .logo {
+        width: 120px; /* Reduce logo size */
+    }
+
+    .profile-icon {
+        width: 30px;
+        height: 30px; /* Smaller profile icon */
+    }
+
+    .container h4 {
+        font-size: 1.2em; /* Slightly smaller font size */
+    }
+
+    .btn {
+        font-size: 0.9em; /* Smaller button text */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .card {
+        padding: 1rem; /* Add padding inside the card */
+    }
+
+    /* Stack form fields in a single column on smaller screens */
+    .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .text-center.mt-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+.dark-mode .form-control::placeholder,
+.dark-mode .form-select::placeholder {
+    color: #a9a9a9; /* Dark mode placeholder color */
+}
+
+.dark-mode .btn-primary {
+    background-color: #4a5ebd;
+    border-color: #4a5ebd;
+}
+
+.dark-mode .btn-success {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.dark-mode .btn-danger {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.dark-mode .profile-name {
+    color: #e0e0e0;
+}
+
+/* Dark mode toggle icon color change */
+.dark-mode .toggle-icon svg {
+    fill: #ffdd00; /* Yellow icon in dark mode */
+}
+
+/* Dropdown styling for search */
+#modelDropdown {
+    max-height: 200px;
+    max-width: 400px;
+    justify-self: center;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border: 1px solid #ced4da;
+    background-color: white;
+    border-radius: 0.25rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#modelDropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#modelDropdown li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dark mode styling for dropdown */
+.dark-mode #modelDropdown {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+.dark-mode #modelDropdown li:hover {
+    background-color: #444;
+    color: #ffffff;
+}
+
