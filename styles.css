@@ -11,9 +11,13 @@ body {
 }
 
 .container h4 {
-    font-size: 1.5em;
+    font-size: 2em;
     color: #333;
     transition: color 0.5s ease;
+}
+
+.dark-mode .container h4 {
+    color: #e0e0e0;
 }
 
 .card {
@@ -22,7 +26,7 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Updated Button Colors */
+/* Button Colors */
 .btn-primary {
     background-color: #2c3e8b;
     border-color: #2c3e8b;
@@ -33,7 +37,6 @@ form .btn-primary, .btn-success, .btn-danger {
     border-radius: 50px;
     padding: 10px 50px;
 }
-
 
 .btn-primary:hover {
     background-color: #1b2a6d;
@@ -59,22 +62,301 @@ form .btn-primary, .btn-success, .btn-danger {
     background-color: #c82333;
 }
 
+/* Profile Section */
 .profile-section {
     display: flex;
     align-items: center;
+    padding: 6px 12px;
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
 }
+
+.powered-by-de {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.dark-mode .powered-by-de svg path,
+.dark-mode .powered-by-de svg circle {
+    fill: #ffffff; /* Ensures visibility in dark mode */
+}
+
+/* Dropdown menu styling */
+#modelDropdown {
+    position: fixed; /* Use fixed positioning */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    max-width: fit-content;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: auto; /* Adjust width as needed */
+}
+
+/* Ensure consistent dropdown item styles */
+#modelDropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+#modelDropdown li:hover {
+    background-color: #e7edf9;
+    color: #2c3e8b;
+}
+
+.dark-mode #modelDropdown {
+    background-color: #333;
+    border-color: #555;
+}
+
+.dark-mode #modelDropdown li {
+    color: #e0e0e0;
+}
+
+.dark-mode #modelDropdown li:hover {
+    background-color: #4a5ebd;
+    color: #ffffff;
+}
+
+
 
 .profile-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 10px;
+    border: 3px solid #2c3e8b;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .profile-name {
     font-weight: bold;
-    color: #333;
+    color: #2c3e8b;
+    font-size: 1em;
     transition: color 0.5s ease;
+}
+
+.profile-id {
+    font-weight: normal;
+    color: #2c3e8b;
+    font-size: 0.9em;
+    margin-top: -5px;
+    transition: color 0.5s ease;
+}
+
+.dropdown-toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2c3e8b;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.dropdown-toggle-icon svg {
+    fill: #ffffff;
+    stroke: #ffffff;
+    stroke-width: 2;
+    width: 12px;
+    height: 12px;
+}
+
+/* Profile Dropdown Menu */
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profile-dropdown .dropdown-item {
+    color: #333;
+    padding: 8px 16px;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #2c3e8b;
+}
+
+/* Top Button Group (Welcome Back) */
+.button-group-top {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px;
+    background-color: #e7edf9;
+    border-radius: 50px;
+    border: 1px solid #d1d9e6;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.button-group-top .btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.4s ease;
+    border-radius: 50px;
+    margin: 0 4px;
+    position: relative;
+}
+
+.button-group-top .btn-primary {
+    background-color: #2c3e8b;
+    color: #ffffff;
+    border: 2px solid #d1d9e6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-group-top .btn:hover:not(.btn-primary) {
+    color: #2c3e8b;
+}
+
+.button-group-top .btn:hover:not(.btn-primary)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 139, 0.1);
+    border-radius: 50px;
+    z-index: -1;
+}
+
+.button-group-bottom .btn-primary,
+.button-group-bottom .btn-success,
+.button-group-bottom .btn-danger {
+    border-radius: 50px;
+    padding: 10px 50px;
+}
+
+/* Priority color options */
+#priority option[value="P0"] { color: red; }
+#priority option[value="P1"] { color: orange; }
+#priority option[value="P2"] { color: yellow; }
+#priority option[value="P3"] { color: green; }
+
+/* File table container styling */
+#fileTableContainer {
+    margin-top: 10px;
+}
+
+#fileTable th, #fileTable td {
+    vertical-align: middle;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.dark-mode .profile-section {
+    background-color: #1e1e1e;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .profile-name,
+.dark-mode .profile-id {
+    color: #e0e0e0;
+}
+
+.dark-mode .dropdown-toggle-icon {
+    background-color: #4a5ebd;
+}
+
+.dark-mode .dropdown-toggle-icon svg {
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+
+.dark-mode .profile-dropdown .dropdown-item:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.dark-mode .button-group-top {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+.dark-mode .button-group-top .btn {
+    color: #e0e0e0;
+}
+
+.dark-mode .button-group-top .btn-primary {
+    background-color: #4a5ebd;
+    color: #ffffff;
+    border: 2px solid #444;
+}
+
+.dark-mode .button-group-top .btn:hover:not(.btn-primary) {
+    color: #4a5ebd;
+}
+
+.dark-mode .button-group-bottom .btn-primary {
+    background-color: #4a5ebd;
+    border-color: #4a5ebd;
+}
+
+.dark-mode .button-group-bottom .btn-success {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.dark-mode .button-group-bottom .btn-danger {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* Dark Mode Toggle Icon (bottom left, no background) */
+.toggle-icon {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.5s ease;
+}
+
+.dark-mode .toggle-icon svg {
+    fill: #ffdd00;
 }
 
 /* Form control styles */
@@ -88,70 +370,7 @@ form .btn-primary, .btn-success, .btn-danger {
 
 .form-control::placeholder,
 .form-select::placeholder {
-    color: #6c757d; /* Light mode placeholder color */
-    transition: color 0.5s ease;
-}
-
-/* Dark mode toggle icon */
-.toggle-icon {
-    cursor: pointer;
-    background: none;
-    border: none;
-    transition: color 0.5s ease;
-}
-
-.toggle-icon svg {
-    stroke: #333; /* Default icon color for light mode */
-    transition: stroke 0.5s ease;
-}
-
-/* Responsive adjustments for mobile users */
-@media (max-width: 576px) {
-    .logo {
-        width: 120px; /* Reduce logo size */
-    }
-
-    .profile-icon {
-        width: 30px;
-        height: 30px; /* Smaller profile icon */
-    }
-
-    .container h4 {
-        font-size: 1.2em; /* Slightly smaller font size */
-    }
-
-    .btn {
-        font-size: 0.9em; /* Smaller button text */
-        padding: 8px 16px; /* Adjust button padding */
-    }
-
-    .card {
-        padding: 1rem; /* Add padding inside the card */
-    }
-
-    /* Stack form fields in a single column on smaller screens */
-    .row .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .text-center.mt-4 {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Dark mode styles */
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-.dark-mode .card {
-    background-color: #1e1e1e;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
+    color: #6c757d;
 }
 
 .dark-mode .form-control,
@@ -163,69 +382,45 @@ form .btn-primary, .btn-success, .btn-danger {
 
 .dark-mode .form-control::placeholder,
 .dark-mode .form-select::placeholder {
-    color: #a9a9a9; /* Dark mode placeholder color */
+    color: #a9a9a9;
 }
 
-.dark-mode .btn-primary {
-    background-color: #4a5ebd;
-    border-color: #4a5ebd;
-}
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .logo {
+        width: 120px;
+    }
 
-.dark-mode .btn-success {
-    background-color: #218838;
-    border-color: #218838;
-}
+    .profile-icon {
+        width: 30px;
+        height: 30px;
+    }
 
-.dark-mode .btn-danger {
-    background-color: #c82333;
-    border-color: #c82333;
-}
+    .profile-section {
+        padding: 4px 8px;
+    }
 
-.dark-mode .profile-name {
-    color: #e0e0e0;
-}
+    .container h4 {
+        font-size: 1.2em;
+    }
 
-/* Dark mode toggle icon color change */
-.dark-mode .toggle-icon svg {
-    fill: #ffdd00; /* Yellow icon in dark mode */
-}
+    .btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 
-/* Dropdown styling for search */
-#modelDropdown {
-    max-height: 200px;
-    max-width: 400px;
-    justify-self: center;
-    overflow-y: auto;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    border: 1px solid #ced4da;
-    background-color: white;
-    border-radius: 0.25rem;
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
+    .card {
+        padding: 1rem;
+    }
 
-#modelDropdown li {
-    padding: 8px 16px;
-    cursor: pointer;
-}
+    .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
-#modelDropdown li:hover {
-    background-color: #f1f1f1;
+    .text-center.mt-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
-
-/* Dark mode styling for dropdown */
-.dark-mode #modelDropdown {
-    background-color: #333;
-    border-color: #555;
-    color: #e0e0e0;
-}
-
-.dark-mode #modelDropdown li:hover {
-    background-color: #444;
-    color: #ffffff;
-}
-

@@ -11,22 +11,46 @@
 
 <div class="container my-4">
     <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <img src="Logo.png" alt="Maruti Logo" class="logo">
-        <div class="profile-section d-flex align-items-center">
-            <img style="margin-right: 10px;" src="./profile.png" alt="Profile" class="profile-icon">
-            <span class="profile-name me-2">Maruti ABC <span class="badge bg-primary">124</span></span>
-            <!-- Dark Mode Toggle Icon -->
+    <div class="container my-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <img src="Logo.png" alt="Maruti Logo" class="logo">
+            
+            <div class="profile-section d-flex align-items-center position-relative">
+                <img src="profile.png" alt="Profile" class="profile-icon me-2">
+                <div class="profile-info">
+                    <span class="profile-name">Maruti ABC</span>
+                    <span class="profile-id">124</span>
+                </div>
+                <button id="profileDropdownToggle" class="dropdown-toggle-icon ms-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+                <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownToggle">
+                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
             <button id="darkModeToggle" class="toggle-icon ms-3">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                    <path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>
+                    <path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/>
+                </svg>
             </button>
+            <div class="powered-by-de ms-4">
+                <svg width="95" height="27" viewBox="0 0 95 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.08398 14.1741H1.91016V12.803H4.08398C4.41992 12.803 4.69336 12.7483 4.9043 12.6389C5.11523 12.5256 5.26953 12.3694 5.36719 12.1702C5.46484 11.9709 5.51367 11.7463 5.51367 11.4963C5.51367 11.2424 5.46484 11.0061 5.36719 10.7874C5.26953 10.5686 5.11523 10.3928 4.9043 10.26C4.69336 10.1272 4.41992 10.0608 4.08398 10.0608H2.51953V17.2151H0.761719V8.68384H4.08398C4.75195 8.68384 5.32422 8.80493 5.80078 9.04712C6.28125 9.2854 6.64844 9.61548 6.90234 10.0374C7.15625 10.4592 7.2832 10.9417 7.2832 11.4846C7.2832 12.0354 7.15625 12.512 6.90234 12.9143C6.64844 13.3167 6.28125 13.6272 5.80078 13.8459C5.32422 14.0647 4.75195 14.1741 4.08398 14.1741ZM8.03906 14.1096V13.9866C8.03906 13.5217 8.10547 13.094 8.23828 12.7034C8.37109 12.3088 8.56445 11.967 8.81836 11.678C9.07227 11.3889 9.38477 11.1643 9.75586 11.0042C10.127 10.8401 10.5527 10.7581 11.0332 10.7581C11.5137 10.7581 11.9414 10.8401 12.3164 11.0042C12.6914 11.1643 13.0059 11.3889 13.2598 11.678C13.5176 11.967 13.7129 12.3088 13.8457 12.7034C13.9785 13.094 14.0449 13.5217 14.0449 13.9866V14.1096C14.0449 14.5706 13.9785 14.9983 13.8457 15.3928C13.7129 15.7834 13.5176 16.1252 13.2598 16.4182C13.0059 16.7073 12.6934 16.9319 12.3223 17.092C11.9512 17.2522 11.5254 17.3323 11.0449 17.3323C10.5645 17.3323 10.1367 17.2522 9.76172 17.092C9.39062 16.9319 9.07617 16.7073 8.81836 16.4182C8.56445 16.1252 8.37109 15.7834 8.23828 15.3928C8.10547 14.9983 8.03906 14.5706 8.03906 14.1096ZM9.72656 13.9866V14.1096C9.72656 14.3752 9.75 14.6233 9.79688 14.8538C9.84375 15.0842 9.91797 15.2874 10.0195 15.4631C10.125 15.635 10.2617 15.7698 10.4297 15.8674C10.5977 15.9651 10.8027 16.0139 11.0449 16.0139C11.2793 16.0139 11.4805 15.9651 11.6484 15.8674C11.8164 15.7698 11.9512 15.635 12.0527 15.4631C12.1543 15.2874 12.2285 15.0842 12.2754 14.8538C12.3262 14.6233 12.3516 14.3752 12.3516 14.1096V13.9866C12.3516 13.7288 12.3262 13.4866 12.2754 13.26C12.2285 13.0295 12.1523 12.8264 12.0469 12.6506C11.9453 12.4709 11.8105 12.3303 11.6426 12.2288C11.4746 12.1272 11.2715 12.0764 11.0332 12.0764C10.7949 12.0764 10.5918 12.1272 10.4238 12.2288C10.2598 12.3303 10.125 12.4709 10.0195 12.6506C9.91797 12.8264 9.84375 13.0295 9.79688 13.26C9.75 13.4866 9.72656 13.7288 9.72656 13.9866ZM16.8926 15.5745L18.2109 10.8752H19.2832L18.9375 12.7209L17.6191 17.2151H16.7227L16.8926 15.5745ZM16.2246 10.8752L17.168 15.5686L17.2559 17.2151H16.2012L14.5957 10.8752H16.2246ZM20.4902 15.4924L21.4102 10.8752H23.0449L21.4395 17.2151H20.3906L20.4902 15.4924ZM19.4297 10.8752L20.7422 15.5393L20.9238 17.2151H20.0215L18.7031 12.7268L18.3691 10.8752H19.4297ZM26.8125 17.3323C26.3203 17.3323 25.8789 17.2542 25.4883 17.0979C25.0977 16.9377 24.7656 16.717 24.4922 16.4358C24.2227 16.1545 24.0156 15.8284 23.8711 15.4573C23.7266 15.0823 23.6543 14.6838 23.6543 14.262V14.0276C23.6543 13.5471 23.7227 13.1077 23.8594 12.7092C23.9961 12.3108 24.1914 11.9651 24.4453 11.6721C24.7031 11.3792 25.0156 11.1545 25.3828 10.9983C25.75 10.8381 26.1641 10.7581 26.625 10.7581C27.0742 10.7581 27.4727 10.8323 27.8203 10.9807C28.168 11.1292 28.459 11.3401 28.6934 11.6135C28.9316 11.887 29.1113 12.2151 29.2324 12.5979C29.3535 12.9768 29.4141 13.3987 29.4141 13.8635V14.5667H24.375V13.4417H27.7559V13.3127C27.7559 13.0784 27.7129 12.8694 27.627 12.6858C27.5449 12.4983 27.4199 12.3499 27.252 12.2405C27.084 12.1311 26.8691 12.0764 26.6074 12.0764C26.3848 12.0764 26.1934 12.1252 26.0332 12.2229C25.873 12.3206 25.7422 12.4573 25.6406 12.6331C25.543 12.8088 25.4688 13.0159 25.418 13.2542C25.3711 13.4885 25.3477 13.7463 25.3477 14.0276V14.262C25.3477 14.5159 25.3828 14.7502 25.4531 14.9651C25.5273 15.1799 25.6309 15.3655 25.7637 15.5217C25.9004 15.678 26.0645 15.7991 26.2559 15.885C26.4512 15.9709 26.6719 16.0139 26.918 16.0139C27.2227 16.0139 27.5059 15.9553 27.7676 15.8381C28.0332 15.717 28.2617 15.5354 28.4531 15.2932L29.2734 16.1838C29.1406 16.3752 28.959 16.5588 28.7285 16.7346C28.502 16.9104 28.2285 17.0549 27.9082 17.1682C27.5879 17.2776 27.2227 17.3323 26.8125 17.3323ZM32.0625 12.2581V17.2151H30.375V10.8752H31.9629L32.0625 12.2581ZM33.9727 10.8342L33.9434 12.3987C33.8613 12.387 33.7617 12.3772 33.6445 12.3694C33.5312 12.3577 33.4277 12.3518 33.334 12.3518C33.0957 12.3518 32.8887 12.3831 32.7129 12.4456C32.541 12.5042 32.3965 12.592 32.2793 12.7092C32.166 12.8264 32.0801 12.969 32.0215 13.137C31.9668 13.3049 31.9355 13.4963 31.9277 13.7112L31.5879 13.6057C31.5879 13.1956 31.6289 12.8186 31.7109 12.4749C31.793 12.1272 31.9121 11.8245 32.0684 11.5667C32.2285 11.3088 32.4238 11.1096 32.6543 10.969C32.8848 10.8284 33.1484 10.7581 33.4453 10.7581C33.5391 10.7581 33.6348 10.7659 33.7324 10.7815C33.8301 10.7932 33.9102 10.8108 33.9727 10.8342ZM37.5703 17.3323C37.0781 17.3323 36.6367 17.2542 36.2461 17.0979C35.8555 16.9377 35.5234 16.717 35.25 16.4358C34.9805 16.1545 34.7734 15.8284 34.6289 15.4573C34.4844 15.0823 34.4121 14.6838 34.4121 14.262V14.0276C34.4121 13.5471 34.4805 13.1077 34.6172 12.7092C34.7539 12.3108 34.9492 11.9651 35.2031 11.6721C35.4609 11.3792 35.7734 11.1545 36.1406 10.9983C36.5078 10.8381 36.9219 10.7581 37.3828 10.7581C37.832 10.7581 38.2305 10.8323 38.5781 10.9807C38.9258 11.1292 39.2168 11.3401 39.4512 11.6135C39.6895 11.887 39.8691 12.2151 39.9902 12.5979C40.1113 12.9768 40.1719 13.3987 40.1719 13.8635V14.5667H35.1328V13.4417H38.5137V13.3127C38.5137 13.0784 38.4707 12.8694 38.3848 12.6858C38.3027 12.4983 38.1777 12.3499 38.0098 12.2405C37.8418 12.1311 37.627 12.0764 37.3652 12.0764C37.1426 12.0764 36.9512 12.1252 36.791 12.2229C36.6309 12.3206 36.5 12.4573 36.3984 12.6331C36.3008 12.8088 36.2266 13.0159 36.1758 13.2542C36.1289 13.4885 36.1055 13.7463 36.1055 14.0276V14.262C36.1055 14.5159 36.1406 14.7502 36.2109 14.9651C36.2852 15.1799 36.3887 15.3655 36.5215 15.5217C36.6582 15.678 36.8223 15.7991 37.0137 15.885C37.209 15.9709 37.4297 16.0139 37.6758 16.0139C37.9805 16.0139 38.2637 15.9553 38.5254 15.8381C38.791 15.717 39.0195 15.5354 39.2109 15.2932L40.0312 16.1838C39.8984 16.3752 39.7168 16.5588 39.4863 16.7346C39.2598 16.9104 38.9863 17.0549 38.666 17.1682C38.3457 17.2776 37.9805 17.3323 37.5703 17.3323ZM44.877 15.8323V8.21509H46.5762V17.2151H45.0469L44.877 15.8323ZM40.8691 14.1213V13.9983C40.8691 13.5139 40.9238 13.0745 41.0332 12.6799C41.1426 12.2815 41.3027 11.9397 41.5137 11.6545C41.7246 11.3694 41.9844 11.1487 42.293 10.9924C42.6016 10.8362 42.9531 10.7581 43.3477 10.7581C43.7188 10.7581 44.043 10.8362 44.3203 10.9924C44.6016 11.1487 44.8398 11.3713 45.0352 11.6604C45.2344 11.9456 45.3945 12.2834 45.5156 12.6741C45.6367 13.0608 45.7246 13.4846 45.7793 13.9456V14.2151C45.7246 14.6565 45.6367 15.0667 45.5156 15.4456C45.3945 15.8245 45.2344 16.1565 45.0352 16.4417C44.8398 16.7229 44.6016 16.9417 44.3203 17.0979C44.0391 17.2542 43.7109 17.3323 43.3359 17.3323C42.9414 17.3323 42.5898 17.2522 42.2812 17.092C41.9766 16.9319 41.7188 16.7073 41.5078 16.4182C41.3008 16.1292 41.1426 15.7893 41.0332 15.3987C40.9238 15.0081 40.8691 14.5823 40.8691 14.1213ZM42.5566 13.9983V14.1213C42.5566 14.3831 42.5762 14.6272 42.6152 14.8538C42.6582 15.0803 42.7266 15.2815 42.8203 15.4573C42.918 15.6292 43.043 15.7639 43.1953 15.8616C43.3516 15.9553 43.541 16.0022 43.7637 16.0022C44.0527 16.0022 44.291 15.9377 44.4785 15.8088C44.666 15.676 44.8086 15.4944 44.9062 15.2639C45.0078 15.0334 45.0664 14.7678 45.082 14.467V13.6995C45.0703 13.4534 45.0352 13.2327 44.9766 13.0374C44.9219 12.8381 44.8398 12.6682 44.7305 12.5276C44.625 12.387 44.4922 12.2776 44.332 12.1995C44.1758 12.1213 43.9902 12.0823 43.7754 12.0823C43.5566 12.0823 43.3691 12.1331 43.2129 12.2346C43.0566 12.3323 42.9297 12.467 42.832 12.6389C42.7383 12.8108 42.668 13.0139 42.6211 13.2483C42.5781 13.4788 42.5566 13.7288 42.5566 13.9983ZM50.8828 8.21509H52.5703V15.762L52.4004 17.2151H50.8828V8.21509ZM56.584 13.9807V14.1038C56.584 14.5764 56.5332 15.01 56.4316 15.4045C56.334 15.7991 56.1816 16.1409 55.9746 16.4299C55.7676 16.7151 55.5098 16.9377 55.2012 17.0979C54.8965 17.2542 54.5371 17.3323 54.123 17.3323C53.7363 17.3323 53.4004 17.2542 53.1152 17.0979C52.834 16.9417 52.5977 16.7209 52.4062 16.4358C52.2148 16.1506 52.0605 15.8167 51.9434 15.4338C51.8262 15.051 51.7383 14.6331 51.6797 14.1799V13.9104C51.7383 13.4573 51.8262 13.0393 51.9434 12.6565C52.0605 12.2737 52.2148 11.9397 52.4062 11.6545C52.5977 11.3694 52.834 11.1487 53.1152 10.9924C53.3965 10.8362 53.7285 10.7581 54.1113 10.7581C54.5293 10.7581 54.8926 10.8381 55.2012 10.9983C55.5137 11.1545 55.7715 11.3772 55.9746 11.6663C56.1816 11.9514 56.334 12.2913 56.4316 12.6858C56.5332 13.0764 56.584 13.5081 56.584 13.9807ZM54.8965 14.1038V13.9807C54.8965 13.7229 54.877 13.4807 54.8379 13.2542C54.8027 13.0237 54.7402 12.8225 54.6504 12.6506C54.5605 12.4749 54.4375 12.3362 54.2812 12.2346C54.1289 12.1331 53.9316 12.0823 53.6895 12.0823C53.459 12.0823 53.2637 12.1213 53.1035 12.1995C52.9434 12.2776 52.8105 12.387 52.7051 12.5276C52.6035 12.6682 52.5273 12.8362 52.4766 13.0315C52.4258 13.2229 52.3945 13.4338 52.3828 13.6643V14.4319C52.3945 14.7405 52.4453 15.0139 52.5352 15.2522C52.6289 15.4866 52.7695 15.6721 52.957 15.8088C53.1484 15.9417 53.3965 16.0081 53.7012 16.0081C53.9395 16.0081 54.1367 15.9612 54.293 15.8674C54.4492 15.7737 54.5703 15.6409 54.6562 15.469C54.7461 15.2971 54.8086 15.0959 54.8438 14.8655C54.8789 14.6311 54.8965 14.3772 54.8965 14.1038ZM59.4434 16.5002L61.125 10.8752H62.9355L60.3867 18.1702C60.332 18.3303 60.2578 18.5022 60.1641 18.6858C60.0742 18.8694 59.9512 19.0432 59.7949 19.2073C59.6426 19.3752 59.4492 19.512 59.2148 19.6174C58.9844 19.7229 58.7012 19.7756 58.3652 19.7756C58.2051 19.7756 58.0742 19.7659 57.9727 19.7463C57.8711 19.7268 57.75 19.6995 57.6094 19.6643V18.428C57.6523 18.428 57.6973 18.428 57.7441 18.428C57.791 18.4319 57.8359 18.4338 57.8789 18.4338C58.1016 18.4338 58.2832 18.4084 58.4238 18.3577C58.5645 18.3069 58.6777 18.2288 58.7637 18.1233C58.8496 18.0217 58.918 17.8889 58.9688 17.7249L59.4434 16.5002ZM58.7402 10.8752L60.1172 15.469L60.3574 17.2561L59.209 17.3792L56.9297 10.8752H58.7402ZM69.3633 17.2151H67.4707L67.4824 15.6331H69.3633C69.7539 15.6331 70.084 15.5393 70.3535 15.3518C70.627 15.1643 70.834 14.885 70.9746 14.5139C71.1191 14.1389 71.1914 13.678 71.1914 13.1311V12.762C71.1914 12.3518 71.1504 11.9924 71.0684 11.6838C70.9902 11.3713 70.873 11.1116 70.7168 10.9045C70.5605 10.6936 70.3652 10.5354 70.1309 10.4299C69.9004 10.3245 69.6348 10.2717 69.334 10.2717H67.4355V8.68384H69.334C69.9121 8.68384 70.4414 8.78345 70.9219 8.98267C71.4062 9.17798 71.8242 9.45923 72.1758 9.82642C72.5312 10.1897 72.8047 10.6213 72.9961 11.1213C73.1914 11.6174 73.2891 12.1682 73.2891 12.7737V13.1311C73.2891 13.7327 73.1914 14.2834 72.9961 14.7834C72.8047 15.2834 72.5332 15.7151 72.1816 16.0784C71.8301 16.4417 71.4141 16.7229 70.9336 16.9221C70.457 17.1174 69.9336 17.2151 69.3633 17.2151ZM68.6484 8.68384V17.2151H66.5918V8.68384H68.6484ZM80.2324 15.6331V17.2151H75.6855V15.6331H80.2324ZM76.418 8.68384V17.2151H74.3613V8.68384H76.418ZM79.6465 12.0706V13.5999H75.6855V12.0706H79.6465ZM80.25 8.68384V10.2717H75.6855V8.68384H80.25Z" fill="black"/>
+                    <path d="M83.4932 17.3185V13.9167L90.6684 5.87592L87.7047 3.09259V0L93.944 5.87592L83.4932 17.3185Z" fill="black"/>
+                    <path d="M82 9.59418V12.2426L87.6733 6.16682L82.9456 1.49316V4.29736L84.9942 6.16682L82 9.59418Z" fill="black"/>
+                    <circle cx="69.5381" cy="2.53806" r="2.53806" fill="#454545"/>
+                </svg>
+                    
+            </div>
         </div>
     </div>
-
-    <div>    
+    
+    <div class="container my-4">
         <h4 class="text-center">Welcome Back</h4>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center button-group-top">
             <button class="btn btn-outline-primary mx-2">Dashboard</button>
             <button class="btn btn-outline-primary mx-2">Ticket Management</button>
             <button class="btn btn-primary mx-2">New Ticket</button>
@@ -38,30 +62,39 @@
         <div class="row mb-3">
             <div class="col-md-4">
                 <label for="ticketNumber" class="form-label">Ticket Number</label>
-                <input type="text" id="ticketNumber" class="form-control" readonly>
+                <input type="text" id="ticketNumber" class="form-control" readonly value="Auto-generated">
             </div>
             <div class="col-md-4">
                 <label for="status" class="form-label">Status</label>
-                <select id="status" class="form-select" required>
-                    <option value="Draft">Draft</option>
-                    <option value="Processing">Processing</option>
-                    <option value="Processed">Processed</option>
-                </select>
+                <input type="text" id="status" class="form-control" value="Draft" readonly>
             </div>
-            <div class="col-md-4">
-                <label for="referenceTicket" class="form-label">Reference Ticket</label>
-                <select id="referenceTicket" class="form-select" required>
-                    <option value="Draft">Draft</option>
-                    <option value="Resolved">Resolved</option>
-                    <option value="Escalated">Escalated</option>
-                </select>
-            </div>
+            <div class="col-md-4"></div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-4">
                 <label for="type" class="form-label">Type</label>
-                <input type="text" id="type" class="form-control" placeholder="New/New With Reference/Revision" required>
+                <select id="type" class="form-select" required>
+                    <option selected disabled>New/New with Reference/Revision</option>
+                    <option value="New">New</option>
+                    <option value="New with Reference">New with Reference</option>
+                    <option value="Revision">Revision</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="additionalInfo" class="form-label">Additional Info (Model)</label>
+                <input type="text" id="additionalInfo" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="referenceTicket" class="form-label">Reference Ticket</label>
+                <input type="text" id="referenceTicket" class="form-control">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="bodyDescription" class="form-label">Body Description</label>
+                <textarea id="bodyDescription" class="form-control" rows="3" required></textarea>
             </div>
             <div class="col-md-4 position-relative">
                 <label for="model" class="form-label">Model</label>
@@ -76,31 +109,59 @@
 
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="bodyDescription" class="form-label">Body Description</label>
-                <textarea id="bodyDescription" class="form-control" rows="3" required></textarea>
+                <label for="date" class="form-label">Date</label>
+                <input type="date" id="date" class="form-control" required>
             </div>
             <div class="col-md-4">
                 <label for="attachment" class="form-label">Attachment</label>
-                <input type="file" id="attachment" class="form-control" required>
+                <select id="attachment" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <label for="folderLink" class="form-label">Folder Link</label>
+                <div id="fileTableContainer">
+                    <input type="file" id="folderLink" class="form-control">
+                    <table id="fileTable" class="table mt-2 d-none">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>File Link</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <button type="button" id="addFileButton" class="btn btn-secondary mt-2 d-none">Add File</button>
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="deadline" class="form-label">Deadline</label>
-                <input type="date" id="deadline" class="form-control" required>
+                <select id="deadline" class="form-select">
+                    <option value="Draft">Draft</option>
+                    <option value="Overdue">Overdue</option>
+                    <option value="Due">Due</option>
+                </select>
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-4">
                 <label for="priority" class="form-label">Priority</label>
-                <select id="priority" class="form-select" required>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
+                <select id="priority" class="form-select">
+                    <option value="P0" style="color: red;">P0</option>
+                    <option value="P1" style="color: orange;">P1</option>
+                    <option value="P2" style="color: yellow;">P2</option>
+                    <option value="P3" style="color: green;">P3</option>
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="initiator" class="form-label">Initiator</label>
-                <input type="text" id="initiator" class="form-control" required>
+                <label for="additionalDescription" class="form-label">Additional Info (Description)</label>
+                <input type="text" id="additionalDescription" class="form-control">
             </div>
             <div class="col-md-4">
                 <label for="internalExternal" class="form-label">Internal/External</label>
@@ -111,28 +172,16 @@
             </div>
         </div>
 
-        <div class="row mb-3">
-            <div class="col-md-4">
-                <label for="folderLink" class="form-label">Folder Link</label>
-                <input type="url" id="folderLink" class="form-control" required>
-            </div>
-            <div class="col-md-4">
-                <label for="additionalInfo" class="form-label">Additional Info (Description)</label>
-                <input type="text" id="additionalInfo" class="form-control" required>
-            </div>
-        </div>
-
-        <!-- Buttons -->
-        <div class="text-center mt-4">
+        <div class="text-center mt-4 button-group-bottom">
             <button type="button" id="saveButton" class="btn btn-primary mx-2">Save</button>
             <button type="submit" class="btn btn-success mx-2">Next</button>
             <button type="reset" class="btn btn-danger mx-2">Cancel</button>
-        </div>        
+        </div>       
     </form>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
-<script src="darkmode.js"></script>
+<script src="darkMode.js"></script>
 </body>
 </html>
